@@ -30,6 +30,28 @@ nav ul {
   padding: 0;
 }
 
+img {
+  opacity: 0.5;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+
+
 article {
   float: left;
   padding: 20px;
@@ -60,3 +82,4 @@ footer {
     height: auto;
   }
 }
+
