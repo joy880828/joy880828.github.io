@@ -1,4 +1,4 @@
-var songNum = 16;
+var songNum = 36;
 
 $(document).ready(function() {
 
