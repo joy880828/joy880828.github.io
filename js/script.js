@@ -52,7 +52,7 @@ function onRandomPlayCheckChanged() {
 
             player.onended = () => {
                 let id = player.id;
-                let currNumber = id.substr(id.length - 1);
+                let currNumber = id.match(/\d+/)[0];
                 let rndNumber = parseInt(Math.random() * songNum + 1);
                 while (currNumber == rndNumber) {
                     rndNumber = parseInt(Math.random() * songNum + 1);
