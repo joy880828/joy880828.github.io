@@ -41,7 +41,7 @@ $(document).ready(function() {
 });
 
 
-
+//勾選隨機播放checkBox
 function onRandomPlayCheckChanged() {
 
     if ($('#randomPlay').is(":checked")) {
@@ -81,7 +81,7 @@ function onRandomPlayCheckChanged() {
 }
 
 
-
+//播放下一首歌
 function playNextSong() {
 
     var num = 1;
@@ -93,4 +93,14 @@ function playNextSong() {
         }
         num++;
     }
+}
+
+//一次調整所有歌曲音量
+function volumeAdjust(){
+    var slideBar = document.getElementById("volumeControl");
+    var volume = slideBar.value;
+    var audios =  document.querySelectorAll("audio");
+    audios.forEach(x => {x.volume = volume / 100;});
+    document.getElementById("volumeText").textContent = `音量：${volume}%`;
+    
 }
