@@ -1,26 +1,26 @@
-var songNum = 46;
-
-$(document).ready(function() {
+var songNum = 48;
+var noFileNotFoundError = true;
+$(document).ready(function () {
 
     //binding 隨機播放checkbox
     $('#randomPlay').change(() => onRandomPlayCheckChanged());
 
-    //generate mp3 player
-    for (var i = 1; i <= songNum; i++) {
+        //generate mp3 player
+        for (var i = 1; i <= songNum; i++) {
 
-        var myAudio = document.createElement("audio");
-        myAudio.controls = "controls";
-        myAudio.id = "fromJS" + i;
-        myAudio.textContent = "hi";
-
-        var mySrc = document.createElement("source")
-        mySrc.src = "musics/music" + i + ".mp3";
-        mySrc.type = "audio/mpeg";
-        myAudio.appendChild(mySrc);
-
-        document.body.appendChild(myAudio);
-
-    }
+            var myAudio = document.createElement("audio");
+            myAudio.controls = "controls";
+            myAudio.id = "fromJS" + i;
+            myAudio.textContent = "hi";
+    
+            var mySrc = document.createElement("source")
+            mySrc.src = "musics/music" + i + ".mp3";
+            mySrc.type = "audio/mpeg";
+            myAudio.appendChild(mySrc);
+    
+            document.body.appendChild(myAudio);
+    
+        }
 
 
 
@@ -96,11 +96,11 @@ function playNextSong() {
 }
 
 //一次調整所有歌曲音量
-function volumeAdjust(){
+function volumeAdjust() {
     var slideBar = document.getElementById("volumeControl");
     var volume = slideBar.value;
-    var audios =  document.querySelectorAll("audio");
-    audios.forEach(x => {x.volume = volume / 100;});
+    var audios = document.querySelectorAll("audio");
+    audios.forEach(x => { x.volume = volume / 100; });
     document.getElementById("volumeText").textContent = `音量：${volume}%`;
-    
+
 }
