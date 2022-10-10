@@ -1,4 +1,4 @@
-var songNum = 52;
+var songNum = 34;
 var noFileNotFoundError = true;
 $(document).ready(function () {
 
